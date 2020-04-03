@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 {% block content %}
 <style>
     body {
@@ -36,13 +36,17 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'blog:post-detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | {{ post.category }} </p>
+                    <p class="card-text">{{ post.content|slice:":200" }}</p>
+                    <a href="{% url 'blog:post-detail' post.slug  %}" class="btn btn-primary">Читать продолжение &rarr;</a>
                 </div>
             </div>
             {% endfor %}
         </div>
+        {% block category %}
+            <!-- Category Goes here -->
+        {% endblock %}
     </div>
 </div>
+
 {%endblock%}

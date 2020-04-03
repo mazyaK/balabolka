@@ -1,0 +1,13 @@
+{% extends "blog/index.html" %}
+{% block category %}
+
+<div class="p-5 float-right" >
+    <h4 class="font-italic">Категории</h4>
+        {% for category in category_list %}
+            <ol class="list-unstyled mb-0">
+                <li>{{ category.name }}</li>
+            </ol>
+        {% endfor %}
+</div>
+
+{% endblock %}

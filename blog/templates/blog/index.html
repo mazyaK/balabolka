@@ -22,7 +22,7 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Добро пожаловать на блог "Balabolka" </h3>
+                    <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Добро пожаловать на блог "Balabolka" </a></h3>
                 </div>
             </div>
         </div>
@@ -43,9 +43,14 @@
             </div>
             {% endfor %}
         </div>
-        {% block category %}
-            <!-- Category Goes here -->
-        {% endblock %}
+        <div class="p-5 float-right" >
+            <h4 class="font-italic">Категории</h4>
+            {% for category in category_list %}
+                <ul class="list-unstyled mb-0">
+                    <li><a href="{% url 'blog:filtered_post' category.name %}" >{{ category.name }}</a></li>
+                </ul>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

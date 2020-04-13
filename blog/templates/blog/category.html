@@ -1,13 +1,59 @@
-{% extends "blog/index.html" %}
-{% block category %}
+{% extends "blog/base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+        link: white
+    }
 
-<div class="p-5 float-right" >
-    <h4 class="font-italic">Категории</h4>
-        {% for category in category_list %}
-            <ol class="list-unstyled mb-0">
-                <li>{{ category.name }}</li>
-            </ol>
-        {% endfor %}
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}">Блог "Balabolka"</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | {{ post.category }} </p>
+                    <p class="card-text">{{ post.content|slice:":200" }}</p>
+                    <a href="{% url 'blog:post-detail' post.slug  %}" class="btn btn-primary">Читать продолжение &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="p-5 float-right" >
+            <h4 class="font-italic">Категории</h4>
+            {% for category in category_list %}
+                <ul class="list-unstyled mb-0">
+                    <li><a href="{% url 'blog:filtered_post' category.name %}" >{{ category.name }}</a></li>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
-{% endblock %}
+{%endblock%}
+

@@ -25,21 +25,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts/static/accounts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts/templates/registration" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\static\accounts" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog\blog" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog\category" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\static\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,7 +126,13 @@
       <workItem from="1586114933236" duration="4780000" />
       <workItem from="1586131947192" duration="10133000" />
       <workItem from="1586223456398" duration="2967000" />
-      <workItem from="1586780092807" duration="1071000" />
+      <workItem from="1586780092807" duration="2020000" />
+      <workItem from="1586862553320" duration="2190000" />
+      <workItem from="1586987833491" duration="2683000" />
+      <workItem from="1587087228337" duration="599000" />
+      <workItem from="1587091168126" duration="611000" />
+      <workItem from="1587093927605" duration="5000" />
+      <workItem from="1587205333335" duration="13244000" />
     </task>
     <servers />
   </component>

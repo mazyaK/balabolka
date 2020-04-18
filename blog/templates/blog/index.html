@@ -7,21 +7,45 @@
         background-color: #fdfdfd;
     }
 
-    .head_text {
-        color: white;
+    A {
+        color: #2E2E2E; /* Цвет ссылок */
     }
+
+    A:active {
+        color: #2E2E2E; /* Цвет активных ссылок */
+    }
+
+    .site-heading > a { color:white;}
 
     .card {
         box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+    .btn-custom_classic{
+        color: #fff;
+        background-color: #2E2E2E;
+        border-color: #2E2E2E;
+    }
+
+    .btn-custom_classic:hover{
+        background-color: #2E2E2E;
+        border-color: #2E2E2E;
     }
 </style>
 
 <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
+
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
+                    {% else %}
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>
+                    {% endif %}
                     <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Добро пожаловать на блог "Balabolka" </a></h3>
                 </div>
             </div>
@@ -29,8 +53,14 @@
     </div>
 </header>
 <div class="container">
+    <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+        {% for category in category_list %}
+                <a class="p-2 text-muted" href="{% url 'blog:filtered_post' category.name %}" >{{ category.name }}</a>
+        {% endfor %}
+    </nav>
+    </div>
     <div class="row">
-        <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
             <div class="card mb-4">
@@ -38,20 +68,13 @@
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | {{ post.category }} </p>
                     <p class="card-text">{{ post.content|slice:":200" }}</p>
-                    <a href="{% url 'blog:post-detail' post.slug  %}" class="btn btn-primary">Читать продолжение &rarr;</a>
+                    <a class="btn btn-custom_classic p-2" href="{% url 'blog:post-detail' post.slug  %}">Читать продолжение &rarr;</a>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <div class="p-5 float-right" >
-            <h4 class="font-italic">Категории</h4>
-            {% for category in category_list %}
-                <ul class="list-unstyled mb-0">
-                    <li><a href="{% url 'blog:filtered_post' category.name %}" >{{ category.name }}</a></li>
-                </ul>
-            {% endfor %}
-        </div>
     </div>
 </div>
+
 
 {%endblock%}

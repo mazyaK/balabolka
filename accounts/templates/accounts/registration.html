@@ -1,0 +1,25 @@
+
+
+{% extends  'accounts/registration_base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+
+{% block main %}
+<div class="card">
+<div class="card-body">
+<h4 class="card-title"></h4>
+
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ next }}">
+
+{{ form|crispy }}
+
+<button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+</form>
+</div>
+</div>
+{% endblock %}

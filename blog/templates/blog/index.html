@@ -42,6 +42,7 @@
                 <div class="site-heading">
                     {% if request.user.is_authenticated %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:profile' %}" style="margin-right:10px;">Profile</a>
                     {% else %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>

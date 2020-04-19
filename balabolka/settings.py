@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'balabolka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'balabolka_db',
+        'NAME': 'balabolka',
         'USER': 'postgres',
         'PASSWORD': 'mazyakidze652',
         'HOST': '127.0.0.1',

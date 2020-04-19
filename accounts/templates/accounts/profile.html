@@ -1,0 +1,16 @@
+<h2>{{ user.get_full_name }}</h2>
+<ul>
+  <li>{{ user.avatar }}</li>
+  <li>Имя пользователя: {{ user.username }}</li>
+  <li>Почта: {{ user.email }}</li>
+  <li>Имя: {{ user.first_name }}</li>
+  <li>Фамилия: {{ user.last_name }}</li>
+  <li>Обо мне: {{ user.about_me }}</li>
+</ul>
+
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  <button type="submit">Save changes</button>
+</form>

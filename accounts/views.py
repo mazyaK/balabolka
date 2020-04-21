@@ -1,11 +1,11 @@
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.db import transaction
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from django.utils.decorators import method_decorator
 from django.views.generic import FormView
-
-from accounts.forms import ProfileForm, UserForm
+from django.views import generic
+from .models import User
 
 
 class RegistrationView(FormView):
@@ -17,30 +17,19 @@ class RegistrationView(FormView):
         form.save()
         return super(RegistrationView, self).form_valid(form)
 
-
-
-class ProfileView(FormView):
-    form_class = ProfileForm
+class ProfileView(generic.DetailView):
+    model = User
     template_name = 'accounts/profile.html'
-    success_url = '/'
 
-    @login_required
-    @transaction.atomic
-    def update_profile(self, request):
-        if request.method == 'POST':
-            user_form = UserForm(request.POST, instance=request.user)
-            profile_form = ProfileForm(request.POST, instance=request.user.profile)
-            if user_form.is_valid() and profile_form.is_valid():
-                user_form.save()
-                profile_form.save()
-                messages.success(request, 'Ваш профиль был успешно обновлен.')
-                return redirect('accounts:profile')
-            else:
-                messages.error(request, 'Пожалуйста, исправьте ошибки.')
-        else:
-            user_form = UserForm(instance=request.user)
-            profile_form = ProfileForm(instance=request.user.profile)
-        return render(request, 'accounts/profile.html', {
-            'user_form': user_form,
-            'profile_form': profile_form,
-        })
+
+
+class ProfileUpdateView(generic.UpdateView):
+    model = User
+    template_name= 'accounts/profile_edit.html'
+    fields = ['avatar', 'first_name', 'last_name', 'email', 'about_me']
+
+    def get_success_url(self):
+        return reverse('accounts:profile', kwargs={'slug': self.object.slug})
+
+
+

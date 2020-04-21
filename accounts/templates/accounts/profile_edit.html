@@ -1,0 +1,10 @@
+{% if request.user.is_authenticated %}
+    {% if request.user.username == user.username %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+    {% endif %}
+{% else %}
+    <h1>Страница для вас недоступна</h1>
+{% endif %}

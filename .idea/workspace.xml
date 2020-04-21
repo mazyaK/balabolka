@@ -25,20 +25,20 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts/templates/registration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/accounts/templates/accounts" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\media\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\static\media\avatars" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog\blog" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\blog\templates\blog\category" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\static\accounts" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
     </key>
@@ -108,6 +108,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -133,7 +136,8 @@
       <workItem from="1587091168126" duration="611000" />
       <workItem from="1587093927605" duration="5000" />
       <workItem from="1587205333335" duration="13244000" />
-      <workItem from="1587284595878" duration="1881000" />
+      <workItem from="1587284595878" duration="12666000" />
+      <workItem from="1587336075551" duration="15770000" />
     </task>
     <servers />
   </component>

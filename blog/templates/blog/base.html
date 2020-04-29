@@ -4,7 +4,6 @@
     <head>
         <title>Блог "Balabolka"</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous" />
@@ -12,19 +11,22 @@
 
     <body>
         <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
+        body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: #fdfdfd;
         }
+
         .shadow {
             box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
         }
+
         .btn-danger {
             color: #fff;
             background-color: #f00000;
             border-color: #dc281e;
         }
+
         .masthead {
             background: #000000;
             height: auto;
@@ -32,6 +34,38 @@
             box-shadow: 0 16px 48px #E3E7EB;
             padding-top: 10px;
         }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            background-color: #fdfdfd;
+        }
+
+        A {
+            color: #2E2E2E; /* Цвет ссылок */
+        }
+
+        A:active {
+            color: #2E2E2E; /* Цвет активных ссылок */
+        }
+
+        .site-heading > a { color:white;}
+
+        .card {
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+        .btn-custom_classic{
+            color: #fff;
+            background-color: #2E2E2E;
+            border-color: #2E2E2E;
+        }
+
+        .btn-custom_classic:hover{
+            background-color: #2E2E2E;
+            border-color: #2E2E2E;
+        }
+
         </style>
 
 
@@ -40,10 +74,18 @@
         <!-- Content Goes here -->
         {% endblock content %}
 
+
         {% block profile %}
         <!-- Profile Goes here -->
         {% endblock profile %}
 
+        {% block profile_editor %}
+        <!-- Profile Goes here -->
+        {% endblock profile_editor %}
+        
+        {% block post-edit %}
+        <!-- Post-edit Goes here -->
+        {% endblock post-edit %}
 
     </body>
 </html>

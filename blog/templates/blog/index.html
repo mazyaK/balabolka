@@ -1,38 +1,5 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-
-    A {
-        color: #2E2E2E; /* Цвет ссылок */
-    }
-
-    A:active {
-        color: #2E2E2E; /* Цвет активных ссылок */
-    }
-
-    .site-heading > a { color:white;}
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-
-    .btn-custom_classic{
-        color: #fff;
-        background-color: #2E2E2E;
-        border-color: #2E2E2E;
-    }
-
-    .btn-custom_classic:hover{
-        background-color: #2E2E2E;
-        border-color: #2E2E2E;
-    }
-</style>
-
 <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
@@ -43,11 +10,12 @@
                     {% if request.user.is_authenticated %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:profile' user.slug %}" style="margin-right:10px;">Profile</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'blog:post_new' %}" style="margin-right:10px;">Add post</a>
                     {% else %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>
                     {% endif %}
-                    <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Добро пожаловать на блог "Balabolka" </a></h3>
+                    <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Блог "Balabolka" </a></h3>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from mptt.models import MPTTModel, TreeForeignKey
 # from django.contrib.auth.models import User
 from accounts.models import User
@@ -30,6 +31,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+
 
     class Meta():
         ordering = ['-created_on']

@@ -1,11 +1,35 @@
 {% extends 'blog/base.html' %} {% block content %}
 {% load crispy_forms_tags %}
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:profile' user.slug %}" style="margin-right:10px;">Profile</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'blog:post_new' %}" style="margin-right:10px;">Add post</a>
+                    {% else %}
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>
+                    {% endif %}
+                    <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Блог "Balabolka" </a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 card mb-4  mt-3 left  top">
       <div class="card-body">
-        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
+        <h1>{% block title %}
+            {{ post.title }}
+            <a class="btn btn-default" href="{% url 'blog:post_edit' slug=post.slug %}">Edit</a>
+        {% endblock title %}</h1>
         <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
         <p class="card-text ">{{ post.content | safe }}</p>
       </div>
@@ -39,7 +63,7 @@
         <form method="post" style="margin-top: 1.3em;">
           {{ comment_form.as_p }}
           {% csrf_token %}
-          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+          <button type="submit" class="btn btn-custom_classic">Submit</button>
         </form>
         {% endif %}
       </div>

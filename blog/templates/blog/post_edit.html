@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block post-edit %}
+<header class="masthead">
+<div class="overlay"></div>
+<div class="container">
+
+    <div class="row">
+        <div class=" col-md-8 col-md-10 mx-auto">
+            <div class="site-heading">
+                {% if request.user.is_authenticated %}
+                    <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
+                    <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:profile' user.slug %}" style="margin-right:10px;">Profile</a>
+                    <a class="btn btn-custom_classic p-2 float-right" href="{% url 'blog:post_new' %}" style="margin-right:10px;">Add post</a>
+                {% else %}
+                    <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
+                    <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>
+                {% endif %}
+                <h3 class=" site-heading my-4 mt-3 text-white"><a href="{% url 'blog:home' %}"> Блог "Balabolka" </a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+    <h1>Post editor</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-custom_classic">Save</button>
+    </form>
+
+
+{% endblock %}

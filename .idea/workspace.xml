@@ -29,18 +29,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\static\accounts" />
+      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\media\accounts" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\static\media\avatars" />
       <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\accounts" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\templates\registration" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts\static\accounts" />
-      <recent name="C:\Users\Sanoto.san\PycharmProjects\balabolka\accounts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,9 +108,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="showServicesTree" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -141,7 +138,13 @@
       <workItem from="1587550550479" duration="5285000" />
       <workItem from="1587574818930" duration="1330000" />
       <workItem from="1587720552923" duration="77000" />
-      <workItem from="1587728495188" duration="730000" />
+      <workItem from="1587728495188" duration="4788000" />
+      <workItem from="1587751953289" duration="6906000" />
+      <workItem from="1587831596021" duration="3727000" />
+      <workItem from="1587852153923" duration="11604000" />
+      <workItem from="1587948588665" duration="7398000" />
+      <workItem from="1588035830878" duration="5547000" />
+      <workItem from="1588116556811" duration="7206000" />
     </task>
     <servers />
   </component>

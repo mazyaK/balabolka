@@ -42,6 +42,7 @@
                     {% if request.user.is_authenticated %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:logout' %}">Log out</a>
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'blog:home' %}" style="margin-right:10px;">На главную</a>
+                        <a class="btn btn-custom_classic p-2 float-right" href="{% url 'blog:post_new' %}" style="margin-right:10px;">Add post</a>
                     {% else %}
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:registration' %}">Sign up</a>
                         <a class="btn btn-custom_classic p-2 float-right" href="{% url 'accounts:login' %}" style="margin-right:10px;">Sign in</a>
@@ -52,12 +53,18 @@
         </div>
     </div>
 </header>
-<img src="{{ MEDIA_URL }}{{ user.avatar.url }}" width="90" height="111">
-    <h3>Username: {{ user.username }}</h3>
-    <h3>Имя: {{ user.first_name }}</h3>
-    <h3>Фамилия: {{ user.last_name }}</h3>
-    <h3>Почта: {{ user.email }}</h3>
-    <h3>О себе: {{ user.about_me }}</h3>
+    <div class="card-body">
+        {% if user.avatar %}
+            <p><img src="{{ MEDIA_URL }}{{ user.avatar.url }}" width="189" height="255"></p>
+        {% else %}
+            <p></p>
+        {% endif %}
+        <h3>Username: {{ user.username }}</h3>
+        <h3>Имя: {{ user.first_name }}</h3>
+        <h3>Фамилия: {{ user.last_name }}</h3>
+        <h3>Почта: {{ user.email }}</h3>
+        <h3>О себе: {{ user.about_me }}</h3>
+    </div>
 {% if request.user.username == user.username %}
     <a class="btn btn-custom_classic" href="{% url 'accounts:profile_edit' user.slug %}">edit</a>
 {% endif %}

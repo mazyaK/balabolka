@@ -36,6 +36,10 @@ class Post(models.Model):
     class Meta():
         ordering = ['-created_on']
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 
